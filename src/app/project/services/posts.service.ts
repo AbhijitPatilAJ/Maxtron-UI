@@ -39,4 +39,12 @@ export class PostsService {
       const url= this.apiUrl.concat(`api/Posts/DeletePostById/${Id}`);
       return this.http.delete(url);
     }
+    UploadImage(file:File, fileName:string , title:string){
+      const url= this.apiUrl.concat('api/Images/UploadImage');
+      const formData = new FormData();
+      formData.append('file',file);
+      formData.append('fileName', fileName);
+      formData.append('title',title);
+      return this.http.post(url,formData);
+    }
   }

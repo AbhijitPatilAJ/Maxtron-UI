@@ -79,6 +79,6 @@
         <button class="btn btn-light" (click)="closeImageselector()" style="position: fixed;top: 6%;right: 3%;z-index: 10;">
              X
         </button>
-        <app-image-selector></app-image-selector>
+        <app-image-selector (uploaded)="ImageUploaded($event)"></app-image-selector>
     </div>
     

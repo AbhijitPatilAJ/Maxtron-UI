@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CategoryService } from 'src/app/project/services/category.service';
@@ -16,7 +16,7 @@ export class EditPostComponent implements OnInit, OnDestroy {
   categories:any;
   selectedCategories:any;
   isImageSelectorVisible:boolean=false;
-
+  @Input() uploaded: any;
   constructor(private router:Router, private route:ActivatedRoute, private post: PostsService, private cat: CategoryService) { }
 
 
@@ -54,5 +54,10 @@ export class EditPostComponent implements OnInit, OnDestroy {
      }
      closeImageselector(){
       this.isImageSelectorVisible = false;
+     }
+
+     ImageUploaded(event:any) {
+      console.log(event);
+      this.isImageSelectorVisible = !event;
      }
 }
