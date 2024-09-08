@@ -32,7 +32,8 @@ Posts List Page
 
 
 Add Post page
-![image](https://github.com/user-attachments/assets/e6368f9b-fac6-4226-a0a3-8f3f14be289a)
+![image](https://github.com/user-attachments/assets/6c5229c4-e984-463d-9b68-8fc673b4b6cb)
+
 
 Categories List
 ![image](https://github.com/user-attachments/assets/5c6f4526-86a8-447f-9a8a-b67c314139e7)
