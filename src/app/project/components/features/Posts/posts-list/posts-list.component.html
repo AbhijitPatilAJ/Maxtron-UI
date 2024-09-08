@@ -12,6 +12,7 @@
                         <th class="actionItems">Actions</th>
                         <th>Title</th>
                         <th>Short Description</th>
+                        <th>Catogeries</th>
                         <th>Feature Image</th>
                     </tr>
                 </thead>
@@ -23,6 +24,12 @@
                             </td>
                             <td>{{post.title}}</td>
                             <td>{{post.shortDescription}}</td>
+                            <td>
+                                <span *ngFor="let category of post.categories" >
+                                    <span class="badge bg-secondary me-2">{{category.name}}</span>
+                                </span>
+                                </td>
+
                             <td><img src="{{post.featuredImageUrl}}" class="modal-dialog" width="200px" height="200px" style="display: flex;"></td>
                          </tr>
                 </tbody>

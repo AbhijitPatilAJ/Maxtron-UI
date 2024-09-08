@@ -7,6 +7,7 @@ export class AddPost {
       PublishedDate : Date= new Date();
       Author : string='';
       IsVisible : boolean = true;
+      categories: string[]=[];
 }
 
 export interface GetPost {
