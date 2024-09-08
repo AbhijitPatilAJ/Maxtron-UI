@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## App Preview
 Posts List Page
-![image](https://github.com/user-attachments/assets/2c91f5ac-2141-4732-9fa9-551775eee769)
+![image](https://github.com/user-attachments/assets/83cede7a-561f-40e9-a792-3eafab0815ee)
 
 
 Add Post page
