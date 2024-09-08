@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditCategoryComponent } from './project/components/features/category/edit-category/edit-category/edit-category.component';
 import { PostsListComponent } from './project/components/features/Posts/posts-list/posts-list.component';
 import { AddPostComponent } from './project/components/features/Posts/add-post/add-post.component';
+import { EditPostComponent } from './project/components/features/Posts/edit-post/edit-post.component';
+import { ImageSelectorComponent } from './project/components/features/category/shared/image-selector/image-selector.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { AddPostComponent } from './project/components/features/Posts/add-post/a
     AddCategoryComponent,
     EditCategoryComponent,
     PostsListComponent,
-    AddPostComponent
+    AddPostComponent,
+    EditPostComponent,
+    ImageSelectorComponent
   ],
   imports: [
     BrowserModule,

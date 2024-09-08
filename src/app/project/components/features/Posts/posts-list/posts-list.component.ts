@@ -34,4 +34,14 @@ export class PostsListComponent implements OnInit, OnDestroy {
       this.posts=result;
     });
   }
+
+  editPost(id:any){
+      this.router.navigateByUrl(`app/admin/posts/edit/${id}`);
+    }
+
+    DeletePostById(Id:any){
+      this.postList = this.postsServie.DeletePostById(Id).subscribe(result =>{
+        this.getAllPost();
+      });
+    }
 }

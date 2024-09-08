@@ -5,8 +5,13 @@ import { AddCategoryComponent } from './project/components/features/category/add
 import { EditCategoryComponent } from './project/components/features/category/edit-category/edit-category/edit-category.component';
 import { PostsListComponent } from './project/components/features/Posts/posts-list/posts-list.component';
 import { AddPostComponent } from './project/components/features/Posts/add-post/add-post.component';
+import { EditPostComponent } from './project/components/features/Posts/edit-post/edit-post.component';
 
 const routes: Routes = [
+  {
+    path:'',
+    component: PostsListComponent
+  },
   {
     path:'app/admin/categories',
     component: CategoryListComponent
@@ -26,6 +31,10 @@ const routes: Routes = [
   {
     path:'app/admin/posts/add',
     component: AddPostComponent
+  },
+  {
+    path:'app/admin/posts/edit/:id',
+    component: EditPostComponent
   }
 ];
 

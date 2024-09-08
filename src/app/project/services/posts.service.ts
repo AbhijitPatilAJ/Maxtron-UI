@@ -25,4 +25,18 @@ export class PostsService {
       return this.http.get<GetPost>(url);
     }
 
+    GetPostById(Id:any){
+      const url= this.apiUrl.concat(`api/Posts/GetPostById/${Id}`);
+      return this.http.get(url);
+    }
+
+    UpdatePost(req:AddPost){
+      const url= this.apiUrl.concat('api/Posts/UpdatePost');
+      return this.http.put(url,req);
+    }
+
+    DeletePostById(Id:any){
+      const url= this.apiUrl.concat(`api/Posts/DeletePostById/${Id}`);
+      return this.http.delete(url);
+    }
   }

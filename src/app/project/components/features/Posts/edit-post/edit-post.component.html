@@ -1,0 +1,84 @@
+<div class="container">
+    <h1 class="mt-3"> Edit Post</h1>
+    <ng-container>
+    <form>
+        <div class="mt-2">
+            <div class="mt-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" id="title" name="title" class="form-control" placeholder="Title" [(ngModel)]="postData.title">
+            </div>
+    
+            <div class="mt-3">
+                <label for="urlHandle" class="form-label">Url Handle</label>
+                <input type="text" id="urlHandle" name="urlHandle" class="form-control" placeholder="Url Handle" [(ngModel)]="postData.urlHandle">
+            </div>
+    
+            <div class="mt-3">
+                <label for="shortDescription" class="form-label">Short Description</label>
+                <input type="text" id="shortDescription" name="shortDescription" class="form-control" placeholder="Short Description" [(ngModel)]="postData.shortDescription">
+            </div>
+    
+            <div class="mt-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea id="content" name="shortDescription" class="form-control" [(ngModel)]="postData.content"> </textarea>
+            </div>
+    
+            <div class="mt-3">
+                <label for="featureImageUrl" class="form-label">Feature Image Url
+                    <button type="button" class="btn btn-light" (click)="openImageselector()">
+                            Upload 
+                    </button>
+                </label>
+    
+                <ng-container *ngIf="postData.featuredImageUrl !== '';else ImageNotAvailable">
+                    <div>
+                        <img [src]="postData.featuredImageUrl" width="100" class="my-2"> 
+                    </div>
+                </ng-container>
+                <ng-template #ImageNotAvailable>
+    
+                </ng-template>
+                <input type="text" id="featureImageUrl" name="featureImageUrl" class="form-control" placeholder="Feature Image Url" [(ngModel)]="postData.featuredImageUrl">
+            </div>
+    
+            <div class="mt-3">
+                <label for="publishedDate" class="form-label">Published Date</label>
+                <input type="date" id="publishedDate" name="publishedDate" class="form-control" placeholder="Published Date" [ngModel]="postData.publishedDate | date:'yyyy-MM-dd'" (ngModelChange)="postData.PublishedDate=$event" disabled>
+            </div>
+    
+            <div class="mt-3">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" id="author" name="author" class="form-control" placeholder="Author" [(ngModel)]="postData.author">
+            </div>
+    
+            <div class="form-check mt-3">
+                <label for="isVisible" class="form-check-label">Is Visible?</label>
+                <input type="checkbox" id="isVisible" name="isVisible" class="form-check-input" [(ngModel)]="postData.isVisible">
+            </div>
+    
+            <div class="mt-3">
+                <label for="categories" class="form-label">Categories</label>
+                <ng-container *ngIf="postData.categories">
+                    <select name="categories" class="form-control mb-3" [(ngModel)]="selectedCategories" multiple>
+                        <option *ngFor="let item of categories"  [value]="item.id">{{item.name}}</option>
+                    </select>
+                </ng-container>
+            </div>
+            
+            <div class="mt-3">
+                <button type="button" class="btn btnSave modal-content" (click)="savePost()">
+                    Update Post
+                </button>
+            </div>
+    
+        </div>
+    </form>
+    </ng-container>
+    </div>
+    <div class="image-container-modal" [ngClass]="{'d-block':isImageSelectorVisible, 'd-none': !isImageSelectorVisible}">
+        <button class="btn btn-light" (click)="closeImageselector()" style="position: fixed;top: 6%;right: 3%;z-index: 10;">
+             X
+        </button>
+        <app-image-selector></app-image-selector>
+    </div>
+    
